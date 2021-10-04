@@ -1,0 +1,29 @@
+<script>
+    const PARKING_PLACES = 7
+let freePlace = 3
+
+let decor = ""
+for (let x = 1 ; x <= PARKING_PLACES * 5; x++ ) {
+    decor += "#"
+}
+console.log(decor)
+
+
+
+let places = ""
+for (let x = 1; x <= PARKING_PLACES - 4; x++) {
+    places += "| X || X |"  
+    if (x === 1) {
+        places += "|  |"
+    } else if (x === 3) {
+        x++ 
+    }
+} 
+console.log(places)
+
+decor = ""
+for (let x = 1; x <= PARKING_PLACES * 5; x++) {
+    decor += "#"
+}
+console.log(decor)
+</script>
