@@ -2,18 +2,73 @@
 
     // The larger integer
 let num1, num2 
-num1 = prompt('The first integer')
-num2 = prompt('The second integer')
+num1 = prompt('The first integer');
+num2 = prompt('The second integer');
 
 if (num1 > num2) {
-    console.log(`The larger integer is ${num1}`)
+    console.log(`The larger integer is ${num1}`);
 } else if (num1 < num2) {
-    console.log(`The larger integer is ${num2}`)
+    console.log(`The larger integer is ${num2}`);
 } else if(num1 === num2) {
-    console.log(`The values of integers ${num1} and ${num2} is equal`)
+    console.log(`The values of integers ${num1} and ${num2} is equal`);
 };
     
+    
+    // The sign numbers
 
-    //
+let firstNumber = prompt("Write a signed number");
+let secondNumber = prompt("Write a signed number");
+let thirdNumber = prompt("Write a signed number");
+
+listOfNumber = firstNumber, secondNumber, thirdNumber
+
+if (listOfNumber > 0) {
+    console.log(`All the number is positive.`);
+    
+} else {
+    console.log(`All the number is negative`);
+} 
+
+// Sort numbers
+
+let number1 = prompt("Write a number");
+let number2 = prompt("Write a number");
+let number3 = prompt("Write a number");
+
+if (number1 > number2 && number1 > number3) {
+    if (number2 > number3){
+        console.log(number1 + "," + number2 + "," + number3);
+    } else {
+        console.log(number1 + "," + number3 + "," + number2);
+} 
+} else if (number2 > number1 && number2 > number3) {
+    if (number1 > number3) {
+        console.log(number2 + "," + number1 + "," + number3);
+    } else {
+        console.log(number2 + "," + number3 + "," + number1);
+    }
+} else if (number3 > number1 && number3 > number2) {
+    if (number3 > number1) {
+        console.log(number3 + "," + number1 + "," + number2);
+    } else {
+        console.log(number3 + "," + number2 + "," + number1);
+    }
+};
+
+
+// Find the largest number
+
+let largeNum1 = prompt("Write a number");
+let largeNum2 = prompt("Write a number");
+let largeNum3 = prompt("Write a number");
+
+if (largeNum1 > largeNum2 && largeNum1 > largeNum3) {
+    console.log(`The largest number is ${largeNum1}`);
+} else if (largeNum2 > largeNum1 && largeNum2 > largeNum3) {
+    console.log(`The largest number is ${largeNum2}`);
+} else if (largeNum3 > largeNum1 && largeNum3 > largeNum2) {
+    console.log(`The largest number is ${largeNum3}`);
+};
+
 </script>
 
