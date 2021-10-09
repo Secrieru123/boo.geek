@@ -3,26 +3,84 @@
 // Function is a piece of code that does one or more action
 // do not repeat yourself  "DRY"
 
-/*function go(name, age){
+function go(name, age){
     alert(name);
     alert(age);
 }
 
-go("Ion", 26);      // Write a function 
-go("Andrei, 27");   // Write a function where you want
-*/
+go("Ion", 26);      // Call the function 
+go("Andrei, 27", 27);   // Call the function where you want
+
 
 // example 
-debugger
+
 
 function add(name, age) {
-    if (age <= 20) {
+    if (age < 20) {
         return name + 'How are you';
     } else {
-        return name;
+        return name
     }
 }
 
-add(alert("Ion", 10));
+
+
+
+//example .toUpperCase()
+
+const name = "My name is Ion"
+let surname = "My surname is Secrieru"
+
+function upperCase(text) {
+    let upperCaseNow = text.toUpperCase();
+    alert(upperCaseNow);
+
+}
+   
+
+
+// Method to write function in JavaScript
+
+    // Function declaration
+
+function newFunction(hello) {
+    if (hello === "Hello") {
+        alert( "Hello world!");
+    } else if (hello === 46) {
+        alert("Don't say anything!")
+    } else {
+        alert("What are you doing?")
+    }
+}
+
+
+
+    // Function Expression
+
+const myVariable = function(a, b) {
+    console.log(a + b);
+}
+
+
+
+
+    // Arrow Function
+        //Single line of code
+    
+ let great = (a,b) =>  a + b;
+
+
+document.write(great(4, 5));
+
+        // Multiple line of code
+
+const good = (a, b) => { 
+    if (a > b) {
+        return "<br>a is good letter"
+    } else {
+        return '<br>b is good letter'}
+    } 
+
+document.write(good(5, 3));
 
 </script>
