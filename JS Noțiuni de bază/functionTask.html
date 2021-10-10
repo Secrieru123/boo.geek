@@ -1,0 +1,65 @@
+<script>
+
+
+// The temperature value in fahrenheit degrees if the temperature in kelvin is 293 degrees
+
+function kelvinToFahrenheit(kelvin){
+    let celsius = kelvin - 273;
+    let fahrenheit = celsius * (9/5) + 32;
+    return document.write("The temperature in fahrenheit is " + fahrenheit + " degrees.");
+}
+
+kelvinToFahrenheit(293);
+
+// Age in dog years if myAge is 26 years old
+
+function humanAgeInDogYears(myAge) {
+    let earlyYears = 2
+    earlyYears = earlyYears * 10.5
+    let laterYears = myAge - 2
+    laterYears = laterYears * 4
+    myAge = earlyYears + laterYears
+
+    return document.write("<br>Age in dog years is " + myAge + " years old.");
+}
+
+humanAgeInDogYears(26);
+
+// Return the corresponding eight ball answer
+
+let randomNumber = Math.floor(Math.random() * 8)
+
+function answerMyQuestion (userName, userQuestion) {
+    
+    if (randomNumber === 0) {
+        userQuestion = 'It is certain' 
+    } else if (randomNumber === 1) {
+        userQuestion = 'It is decidedly so'
+    } else if (randomNumber === 2) {
+        userQuestion = 'Reply hazy try again'
+    } else if (randomNumber === 3) {
+        userQuestion = 'Cannot predict now'
+    } else if (randomNumber === 4) {
+        userQuestion = 'Do not count on it'
+    } else if (randomNumber === 5) {
+        userQuestion = 'My sources say no'
+    } else if (randomNumber === 6) {
+        userQuestion = 'Outlook not so good'
+    } else if (randomNumber === 7) {
+        userQuestion = 'Signs point to yes'
+    }
+    return document.write(userName + userQuestion)
+}
+answerMyQuestion("<br>Will, ", randomNumber);
+
+
+
+//  Return the time the users will start the race
+
+function raceTime(userAge, registeredEarly) {
+    
+}
+
+
+
+</script>
