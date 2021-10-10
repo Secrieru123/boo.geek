@@ -56,10 +56,22 @@ answerMyQuestion("<br>Will, ", randomNumber);
 
 //  Return the time the users will start the race
 
+let raceNumber = Math.floor(Math.random() * 1001)
+
+
 function raceTime(userAge, registeredEarly) {
-    
+    if(raceNumber > 18 && registeredEarly) {
+        raceNumber += 1000;
+    }
+
+    if(raceNumber > 1001) {
+       document.write("<br>The runner with number " + raceNumber + " will start race at 9:30.");
+    } else if (userAge > 18 && !registeredEarly) {
+        document.write("<br>The other runner over 18 years old will start race at 11:00.");
+    } else {
+        document.write("<br>Please come to the registration.");
+    }
 }
-
-
+raceTime(20, false);
 
 </script>
