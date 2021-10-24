@@ -60,7 +60,7 @@ const moveV = (map,symbol,dir) => {
 const moveH = (map, symbol, dir) => {
     map.forEach(row => {
         row.forEach(col => {
-            if (map[col][row] == symbol) {
+            if (map[row][col] == symbol) {
                 if([row][col +dir] != 1 && [row][col+dir] != 3){
                     map[row][col] = 0
                     map[row][col+dir] = symbol
