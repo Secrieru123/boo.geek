@@ -1,0 +1,14 @@
+
+body {
+    background-color: #333;
+    color: white;
+}
+#gameMapContainer {
+    background-color: brown;
+    width: 420px;
+    height: 305px;
+    font-family: monospace;
+    font-size: 50px;
+    line-height: 30px;
+
+}

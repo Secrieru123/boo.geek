@@ -1,0 +1,57 @@
+<script>
+    let numere = [1,2,3, 'patru', false];
+console.log(numere);
+
+
+    //length - numarul de elemente
+    
+console.log(`lungimea: ${numere.length}`);
+
+    numere[0] = 5;
+console.log(numere);
+
+    numere[numere.length - 1] = true
+console.log(numere);
+
+    for(let i = 0; i < numere.length; i++) {
+        console.log(numere[i]);
+    }
+
+    //push() - adauga elemente la sfirsitul array-ului
+    numere.push(7);
+
+    //unshift() - adauga un element la inceputul array-ului
+    numere.unshift(25);
+
+console.log(numere);
+
+    //.shift() - scoate elemente de la inceputul array-ului
+    numere.shift();
+    //.pop() - scoate elemente de la sfirsitul array-ului
+    numere.pop();
+
+console.log(numere)
+
+//////////////////////////////////////////////////////
+// .indexOf()
+let post = numere.indexOf(true)
+console.log(numere,post);
+
+//.splice() - scoate un element din array pe baza pozitiei
+let elemente = numere.splice(1,3);
+console.log(numere, elemente);
+
+// .join() - unim toate elementele unui array folosind un separator
+
+let arrNew = ['unu','doi', 'trei', 'patru', 'cinci'];
+console.log(arrNew);
+
+let sir = arrNew.join(',')
+console.log(sir)
+
+// reverse()
+
+arrNew.reverse();
+console.log(arrNew)
+
+</script>
