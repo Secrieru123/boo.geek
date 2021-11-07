@@ -1,12 +1,12 @@
 const selectList = (root, data, cbName) =>{
-    let html = `<select onchange='${cbName}'>`
+    let html = `<select onchange='${cbName}(e)'>`
 
 
     // HW2. rewrite code -> .forEach() 
-    for (let i=0; i < Object.keys(data).length; i++) {
-    let code = Object.keys(data)[i]
+    Object.keys(data).forEach(element => {   
+        let code = element
         html += `<option>${code}</option>`
-    }
+    })
 
     html += `</select>`
 

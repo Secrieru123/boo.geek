@@ -1,0 +1,31 @@
+<script>
+
+    class Person { //template
+
+        constructor (firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        sayName(){
+            console.log(this.firstName + ' ' + this.lastName);
+        }
+
+    }
+
+    //obiecte
+
+    let Radu = new Person ('Radu', 'Popescu');
+    let Mihai = new Person ('Mihai','Popa');
+    let Alina = new Person ('Alina','Popescu');
+
+
+    // folosim obiectul
+    Mihai.sayName();
+    Alina.sayName();
+    Radu.sayName();
+
+
+
+
+</script>
