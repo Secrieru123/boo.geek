@@ -10,3 +10,4 @@ let randDelay = (delay) => {
 let randFloat = (value) => {
     return Math.floor(value  * Math.random())
 }
+

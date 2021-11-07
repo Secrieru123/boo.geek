@@ -8,10 +8,10 @@ let count = 1
 
 // initial WAVE
 setInterval(() => {
-    if(count < 50 ) {
+    if(count < 200 ) {
         addAnotherFlake()
     }
-}, 10) 
+}, 100) 
 
 
 function addAnotherFlake () {
@@ -19,5 +19,6 @@ function addAnotherFlake () {
     let scale = randFloat(0.5, 1.5)
     let f = new Flake(count, randCoord(0, containerW), 0, scale, scale)
     f.render(scene)
+    f.fall(containerW, containerH, addAnotherFlake)
 }
 
