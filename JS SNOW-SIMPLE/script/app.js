@@ -8,10 +8,10 @@ let count = 1
 
 // initial WAVE
 setInterval(() => {
-    if(count < 200 ) {
+    if(count < 50 ) {
         addAnotherFlake()
     }
-}, 100) 
+}, 10) 
 
 
 function addAnotherFlake () {
