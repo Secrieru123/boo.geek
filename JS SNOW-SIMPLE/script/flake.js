@@ -16,11 +16,11 @@ class Flake {
 
     // falling phase
     
-    fall(cw, ch, cb) {
+    fall(ch, cb) {
         this.timerId = setInterval(()=> {
            this.top += this.speed 
            this.update()
-           
+
            if(this.top >= ch){
                this.disappear(cb)
            }
