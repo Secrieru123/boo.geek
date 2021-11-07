@@ -7,7 +7,7 @@ let randDelay = (delay) => {
 }
 
 
-let randFloat = (value) => {
-    return Math.floor(value  * Math.random())
+let randFloat = (min,max) => {
+    return min + (max-min)  * Math.random()
 }
 

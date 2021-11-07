@@ -4,7 +4,8 @@ body {
 
 #scene {
     position: relative;
-    border: 1px dotted red;
+    border: 1px dotted transparent;
     width: 1000px;
     height: 700px;
+    box-sizing: border-box;
 }
