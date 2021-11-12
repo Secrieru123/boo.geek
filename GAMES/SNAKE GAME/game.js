@@ -1,12 +1,12 @@
 class Component {
-    constructor (x, y, w, h, frames, /* key, */ rootElement) {
+    constructor (x, y, w, h, frames, key, rootElement) {
             this.x = x
             this.y = y
             this.w = w
             this.h = h
-            /* this.key = key */
+            this.key = key
             this.frames = frames
-            this.currentFrame = /* this.frames[Object.keys(this.frames)[0]] */ this.getFrame(/* this.key */ 1)
+            this.currentFrame = /* this.frames[Object.keys(this.frames)[0]] */ this.getFrame(this.key)
             this.rootElement = rootElement   
             
             this.children = []
@@ -62,7 +62,7 @@ class SnakeTail extends Component {
 
 class Snake extends Component {
     constructor(rootElement) {
-        super(0,0,0,0,{default: {x: 0, y: 0}}, rootElement)
+        super(0,0,0,0,0,{default: {x: 0, y: 0}}, rootElement)
   
         this.children.push(new SnakeHead(8,137,64,64,{ 
             up:   {x: -192, y: 0}, 
