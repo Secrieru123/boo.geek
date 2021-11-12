@@ -1,5 +1,5 @@
 class Component {
-    constructor (x, y, w, h, frames, key, rootElement) {
+    constructor (x, y, w, h, key, frames, rootElement) {
             this.x = x
             this.y = y
             this.w = w
@@ -64,7 +64,7 @@ class Snake extends Component {
     constructor(rootElement) {
         super(0,0,0,0,0,{default: {x: 0, y: 0}}, rootElement)
   
-        this.children.push(new SnakeHead(8,137,64,64,{ 
+        this.children.push(new SnakeHead(8,137,64,64,1,{ 
             up:   {x: -192, y: 0}, 
             right:{x: -256, y: 0},
             down: {x: -256, y: -64}, 
@@ -76,11 +76,12 @@ class Snake extends Component {
             br:   {x: -128, y: -128},
         }, window["map"])); */
 
-        this.children.push(new SnakeTail(8,200,64,64,{ 
+        this.children.push(new SnakeTail(8,200,64,64,1,{ 
             up:   {x: -192, y: -128}, 
             right:{x: -256, y: -128},
             down: {x: -256, y: -192}, 
             left: {x: -192, y: -192}, 
+            
         },window['map']));
     }
 
@@ -114,7 +115,7 @@ class Map extends Component {
 
 
 /* let snake = new Snake(window['test']); */
-let gameMap = new Map(0,0,640,640,{default:{x:0,y:0}},window["map"])
+let gameMap = new Map(0,0,640,640,1,{default:{x:0,y:0}},window["map"])
 
-gameMap.children.push(new Apple(136,136,64,64,{default:{x: 0, y: -192},},window['map']));
+gameMap.children.push(new Apple(136,136,64,64,1,{default:{x: 0, y: -192},},window['map']));
 gameMap.children.push(new Snake(window['map']));
