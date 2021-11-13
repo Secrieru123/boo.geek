@@ -32,6 +32,17 @@ class Component {
         }
     } 
 
+    addChild(child) {
+        if(child instanceof Component && !this.children.includes(child)) {
+                this.children.push(child);
+            }
+    }
+
+    removeChild(remChild) {
+        if(child instanceof Component) {
+                this.children.filter(elem => elem != remChild);
+            }
+        }
 
     render() {
         let componentClassName = this.constructor.name    // which class is this object from?
@@ -57,20 +68,17 @@ class Component {
 
 
 class SnakeSegment extends Component {
-    moveDir = () => {
+    moveDir () {
         if(this.direction == "up") {
             this.y -=64
             this.div.style.top = `${this.y}px`
-        }
-        if(this.direction == "right") {
+        }else if(this.direction == "right") {
             this.x +=64
             this.div.style.left = `${this.x}px`
-        }
-        if(this.direction == "down") {
+        }else if(this.direction == "down") {
             this.y +=64
             this.div.style.top = `${this.y}px`
-        }
-        if(this.direction == "left") {
+        }else if(this.direction == "left") {
             this.x -=64
             this.div.style.left = `${this.x}px`
         }
@@ -91,14 +99,11 @@ class SnakeHead extends SnakeSegment {
         if(e !== undefined){
             if(e.key == 'ArrowUp') {
                 this.direction = 'up'
-            }
-            if(e.key == 'ArrowRight') {
+            }else if(e.key == 'ArrowRight') {
                 this.direction = 'right'
-            }
-            if(e.key == 'ArrowDown') {
+            }else if(e.key == 'ArrowDown') {
                 this.direction = 'down'
-            }
-            if(e.key == 'ArrowLeft') {
+            }else if(e.key == 'ArrowLeft') {
                 this.direction = 'left'
             }
         };
@@ -132,22 +137,22 @@ class Snake extends Component {
             left: {x: -192, y: -64}, 
         },window['map']));
 
-/*         this.children.push(new SnakeBody(8,200,64,64,1, {
+/*         this.addChild(new SnakeBody(8,200,64,64,1, {
             br:   {x: 0, y: 0},
             br:   {x: -128, y: -64},
         }, window["map"]));
 
-        this.children.push(new SnakeBody(8,264,64,64,1, {
+        this.addChild(new SnakeBody(8,264,64,64,1, {
             br:   {x: 0, y: 0},
             br:   {x: -128, y: -128},
         }, window["map"]));
 
-        this.children.push(new SnakeBody(8,328,64,64,1, {
+        this.addChild(new SnakeBody(8,328,64,64,1, {
             br:   {x: 0, y: 0},
             br:   {x: 0, y: -64},
         }, window["map"]));
 
-        this.children.push(new SnakeTail(8,392,64,64,1,{ 
+        this.addChild(new SnakeTail(8,392,64,64,1,{ 
             up:   {x: -192, y: -128}, 
             right:{x: -256, y: -128},
             down: {x: -256, y: -192}, 
@@ -210,3 +215,5 @@ gameMap.children.push(new Apple(136,136,64,64,1,{default:{x: 0, y: -192},},windo
 gameMap.children.push(new Snake(window['map']));
 
 gameMap.start()
+
+
