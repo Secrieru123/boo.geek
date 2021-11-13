@@ -56,9 +56,38 @@ class Component {
 };
 
 
-class SnakeHead extends Component {
+class SnakeSegment extends Component {
+    moveDir = () => {
+        if(this.direction == "up") {
+            this.y -=64
+            this.div.style.top = `${this.y}px`
+        }
+        if(this.direction == "right") {
+            this.x +=64
+            this.div.style.left = `${this.x}px`
+        }
+        if(this.direction == "down") {
+            this.y +=64
+            this.div.style.top = `${this.y}px`
+        }
+        if(this.direction == "left") {
+            this.x -=64
+            this.div.style.left = `${this.x}px`
+        }
+        // update the div inside DOM
+        let dirFrame = this.frames[this.direction]
+        if(dirFrame) {
+            this.currentFrame = dirFrame
+        }
+        let {x: xOffset, y: yOffset} = this.currentFrame
+        this.div.style.backgroundPosition = `${xOffset}px ${yOffset}px `
+    }
+
+    
+}
+
+class SnakeHead extends SnakeSegment {
     update(e) {
-        // movement
         if(e !== undefined){
             if(e.key == 'ArrowUp') {
                 this.direction = 'up'
@@ -66,71 +95,30 @@ class SnakeHead extends Component {
             if(e.key == 'ArrowRight') {
                 this.direction = 'right'
             }
+            if(e.key == 'ArrowDown') {
+                this.direction = 'down'
+            }
+            if(e.key == 'ArrowLeft') {
+                this.direction = 'left'
+            }
         };
 
-
-
-
-        if(this.direction == "up") {
-            this.y -=64
-            this.div.style.top = `${this.y}px`
-        }
-        if(this.direction == "right") {
-            this.x +=64
-            this.div.style.left = `${this.x}px`
-        }
-        // update the div inside DOM
-        let dirFrame = this.frames[this.direction]
-        if(dirFrame) {
-            this.currentFrame = dirFrame
-        }
-        let {x: xOffset, y: yOffset} = this.currentFrame
-        this.div.style.backgroundPosition = `${xOffset}px ${yOffset}px`
+        this.moveDir()
     }
 }
 
-class SnakeBody extends Component {
-   /*  update(e) {
-        // movement
-        
-        if(this.direction == "up") {
-            this.y -=64
-            this.div.style.top = `${this.y}px`
-        }
-        if(this.direction == "right") {
-            this.x +=64
-            this.div.style.left = `${this.x}px`
-        }
-        // update the div inside DOM
-        let dirFrame = this.frames[this.direction]
-        if(dirFrame) {
-            this.currentFrame = dirFrame
-        }
-        let {x: xOffset, y: yOffset} = this.currentFrame
-        this.div.style.backgroundPosition = `${xOffset}px ${yOffset}px`
-    } */
+class SnakeBody extends SnakeSegment {
+     update() {
+        this.moveDir()
+     }
 }
 
-class SnakeTail extends Component {
-    /* update(e) {
-        // movement
-        if(this.direction == "up") {
-            this.y -=64
-            this.div.style.top = `${this.y}px`
-        }
-        if(this.direction == "right") {
-            this.x +=64
-            this.div.style.left = `${this.x}px`
-        }
-        // update the div inside DOM
-        let dirFrame = this.frames[this.direction]
-        if(dirFrame) {
-            this.currentFrame = dirFrame
-        }
-        let {x: xOffset, y: yOffset} = this.currentFrame
-        this.div.style.backgroundPosition = `${xOffset}px ${yOffset}px`
-    } */
+class SnakeTail extends SnakeSegment {
+     update() {
+       this.moveDir() 
+     }
 }
+
 
 class Snake extends Component {
     constructor(rootElement) {
@@ -216,8 +204,6 @@ class Map extends Component {
     
 }
 
-
-/* let snake = new Snake(window['test']); */
 let gameMap = new Map(0,0,640,640,1,{default:{x:0,y:0}},window["map"])
 
 gameMap.children.push(new Apple(136,136,64,64,1,{default:{x: 0, y: -192},},window['map']));
