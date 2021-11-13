@@ -90,7 +90,7 @@ class SnakeHead extends Component {
 }
 
 class SnakeBody extends Component {
-    update(e) {
+   /*  update(e) {
         // movement
         
         if(this.direction == "up") {
@@ -108,11 +108,11 @@ class SnakeBody extends Component {
         }
         let {x: xOffset, y: yOffset} = this.currentFrame
         this.div.style.backgroundPosition = `${xOffset}px ${yOffset}px`
-    }
+    } */
 }
 
 class SnakeTail extends Component {
-    update(e) {
+    /* update(e) {
         // movement
         if(this.direction == "up") {
             this.y -=64
@@ -129,7 +129,7 @@ class SnakeTail extends Component {
         }
         let {x: xOffset, y: yOffset} = this.currentFrame
         this.div.style.backgroundPosition = `${xOffset}px ${yOffset}px`
-    }
+    } */
 }
 
 class Snake extends Component {
@@ -144,9 +144,9 @@ class Snake extends Component {
             left: {x: -192, y: -64}, 
         },window['map']));
 
-        this.children.push(new SnakeBody(8,200,64,64,1, {
+/*         this.children.push(new SnakeBody(8,200,64,64,1, {
             br:   {x: 0, y: 0},
-            br:   {x: -128, y: -128},
+            br:   {x: -128, y: -64},
         }, window["map"]));
 
         this.children.push(new SnakeBody(8,264,64,64,1, {
@@ -156,7 +156,7 @@ class Snake extends Component {
 
         this.children.push(new SnakeBody(8,328,64,64,1, {
             br:   {x: 0, y: 0},
-            br:   {x: -128, y: -128},
+            br:   {x: 0, y: -64},
         }, window["map"]));
 
         this.children.push(new SnakeTail(8,392,64,64,1,{ 
@@ -164,7 +164,7 @@ class Snake extends Component {
             right:{x: -256, y: -128},
             down: {x: -256, y: -192}, 
             left: {x: -192, y: -192}, 
-        },window['map']));
+        },window['map'])); */
     }
 
     update(e) {
