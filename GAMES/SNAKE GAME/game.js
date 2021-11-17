@@ -67,18 +67,8 @@ class Component {
 };
 
 
-class SnakeSegment extends Component {
+/* class SnakeSegment extends Component {
     moveDir (e) {
-        if(e !== undefined){
-            if(e.key == 'ArrowUp') {
-                this.direction = 'up'
-            }else if(e.key == 'ArrowRight') {
-                this.direction = 'right'
-            }else if(e.key == 'ArrowDown') {
-                this.direction = 'down'
-            }else if(e.key == 'ArrowLeft') {
-                this.direction = 'left'
-            };
 
         // ONLY ON TIMER
                 if(e == undefined) {
@@ -104,27 +94,102 @@ class SnakeSegment extends Component {
             }
             let {x: xOffset, y: yOffset} = this.currentFrame
             this.div.style.backgroundPosition = `${xOffset}px ${yOffset}px `
-        }
-    }
+    };
+
     
+} */
+
+class SnakeHead extends Component {
+    update(e) {
+
+        if(e !== undefined){
+            if(e.key == 'ArrowUp') {
+                this.direction = 'up'
+            }else if(e.key == 'ArrowRight') {
+                this.direction = 'right'
+            }else if(e.key == 'ArrowDown') {
+                this.direction = 'down'
+            }else if(e.key == 'ArrowLeft') {
+                this.direction = 'left'
+            }
+        };
+
+        // ONLY ON TIMER
+        if(e == undefined) {
+            if(this.direction == "up") {
+                this.y -=64
+            }else if(this.direction == "right") {
+                this.x +=64
+            }else if(this.direction == "down") {
+                this.y +=64
+            }else if(this.direction == "left") {
+                this.x -=64
+            }
+    };
+    // update the div inside DOM
+    this.div.style.top = `${this.y}px`
+    this.div.style.left = `${this.x}px`
+    this.div.style.top = `${this.y}px`
+    this.div.style.left = `${this.x}px`
+    let dirFrame = this.frames[this.direction]
+    if(dirFrame) {
+        this.currentFrame = dirFrame
+    }
+    let {x: xOffset, y: yOffset} = this.currentFrame
+    this.div.style.backgroundPosition = `${xOffset}px ${yOffset}px `
+    };
 };
 
-class SnakeHead extends SnakeSegment {
-    update(e) {
-        this.moveDir(e)
+class SnakeBody extends Component {
+     update(e, prevChild) {
+         //ONLY ON TIMER
+         if(e == undefined)  {
+            if(prevChild!= undefined){
+                if(prevChild != undefined) {
+                    this.direction = prevChild.direction
+                    this.x = prevChild.x
+                    this.y = prevChild.y
+                }
+            }
+        }
+        // update the div inside DOM
+        this.div.style.top = `${this.y}px`
+        this.div.style.left = `${this.x}px`
+        this.div.style.top = `${this.y}px`
+        this.div.style.left = `${this.x}px`
+        let dirFrame = this.frames[this.direction]
+        if(dirFrame) {
+            this.currentFrame = dirFrame
+        }
+        let {x: xOffset, y: yOffset} = this.currentFrame
+        this.div.style.backgroundPosition = `${xOffset}px ${yOffset}px `
     }
 }
 
-class SnakeBody extends SnakeSegment {
-    update(e) {
-        this.moveDir(e)
+class SnakeTail extends Component {
+    update(e, prevChild) {
+        //ONLY ON TIMER
+        if(e == undefined)  {
+            if(prevChild!= undefined){
+                if(prevChild != undefined) {
+                    this.direction = prevChild.direction
+                    this.x = prevChild.x
+                    this.y = prevChild.y
+                }
+            }
+        }
+        // update the div inside DOM
+        this.div.style.top = `${this.y}px`
+        this.div.style.left = `${this.x}px`
+        this.div.style.top = `${this.y}px`
+        this.div.style.left = `${this.x}px`
+        let dirFrame = this.frames[this.direction]
+        if(dirFrame) {
+            this.currentFrame = dirFrame
+        }
+        let {x: xOffset, y: yOffset} = this.currentFrame
+        this.div.style.backgroundPosition = `${xOffset}px ${yOffset}px `
     }
-}
-
-class SnakeTail extends SnakeSegment {
-     update(e) {
-       this.moveDir(e) 
-     }
 }
 
 
@@ -202,14 +267,10 @@ class Map extends Component {
     start() {
 
         document.body.addEventListener( "keydown",  this.update.bind(this) )
+
         setInterval(()=>{
             this.update()
         }, 700)
-    };
-    gameOver() {
-        if(Snake){
-
-        }
     }
 
 
