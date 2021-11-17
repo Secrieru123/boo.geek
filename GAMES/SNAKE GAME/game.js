@@ -38,9 +38,9 @@ class Component {
             }
     }
 
-    removeChild(remChild) {
+    removeChild(Child) {
         if(child instanceof Component) {
-                this.children.filter(elem => elem != remChild);
+                this.children.filter(elem => elem != Child);
             }
         }
 
@@ -302,7 +302,7 @@ class Snake extends Component {
 }
 
 class Apple extends Component {
-
+    
 }
 
 class Map extends Component {
@@ -315,6 +315,16 @@ class Map extends Component {
             this.update()
         }, 700)
     }
+
+
+    detectOverlaps() {
+        while (Snake) {
+            if (Apple === SnakeHead) {
+                new Apple.pop()
+            }
+        }
+    }
+
 
 
     update(e) {
