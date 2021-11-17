@@ -125,23 +125,24 @@ class SnakeHead extends Component {
             }else if(this.direction == "left") {
                 this.x -=64
             }
+             // update the div inside DOM
+            this.div.style.top = `${this.y}px`
+            this.div.style.left = `${this.x}px`
+            this.div.style.top = `${this.y}px`
+            this.div.style.left = `${this.x}px`
+            let dirFrame = this.frames[this.direction]
+            if(dirFrame) {
+                this.currentFrame = dirFrame
+            }
+            let {x: xOffset, y: yOffset} = this.currentFrame
+            this.div.style.backgroundPosition = `${xOffset}px ${yOffset}px `
     };
-    // update the div inside DOM
-    this.div.style.top = `${this.y}px`
-    this.div.style.left = `${this.x}px`
-    this.div.style.top = `${this.y}px`
-    this.div.style.left = `${this.x}px`
-    let dirFrame = this.frames[this.direction]
-    if(dirFrame) {
-        this.currentFrame = dirFrame
-    }
-    let {x: xOffset, y: yOffset} = this.currentFrame
-    this.div.style.backgroundPosition = `${xOffset}px ${yOffset}px `
     };
+   
 };
 
 class SnakeBody extends Component {
-     update(e, prevChild) {
+     update(e, prevChild, nextChild) {
          //ONLY ON TIMER
          if(e == undefined)  {
             if(prevChild!= undefined){
@@ -151,18 +152,57 @@ class SnakeBody extends Component {
                     this.y = prevChild.y
                 }
             }
-        }
+        
         // update the div inside DOM
         this.div.style.top = `${this.y}px`
         this.div.style.left = `${this.x}px`
         this.div.style.top = `${this.y}px`
         this.div.style.left = `${this.x}px`
+
+        if(prevChild.direction == "up" && nextChild.direction == "right") {
+            this.currentFrame = this.frames["tl"]
+        };
+        if(prevChild.direction == "right" && nextChild.direction == "up") {
+            this.currentFrame = this.frames["br"]
+        };
+        if(prevChild.direction == "up" && nextChild.direction == "up") {
+            this.currentFrame = this.frames["tb"]
+        };
+        if(prevChild.direction == "right" && nextChild.direction == "right") {
+            this.currentFrame = this.frames["lr"]
+        };
+        if(prevChild.direction == "left" && nextChild.direction == "up") {
+            this.currentFrame = this.frames["bl"]
+        };
+        if(prevChild.direction == "right" && nextChild.direction == "down") {
+            this.currentFrame = this.frames["tr"]
+        };
+        if(prevChild.direction == "left" && nextChild.direction == "down") {
+            this.currentFrame = this.frames["tl"]
+        };
+        if(prevChild.direction == "down" && nextChild.direction == "left") {
+            this.currentFrame = this.frames["br"]
+        };
+        if(prevChild.direction == "down" && nextChild.direction == "down") {
+            this.currentFrame = this.frames["tb"]
+        };
+        if(prevChild.direction == "left" && nextChild.direction == "left") {
+            this.currentFrame = this.frames["lr"]
+        };
+        if(prevChild.direction == "down" && nextChild.direction == "right") {
+            this.currentFrame = this.frames["bl"]
+        };
+        if(prevChild.direction == "up" && nextChild.direction == "left") {
+            this.currentFrame = this.frames["tr"]
+        };
+        
+
+        this.currentFrame = this.currentFrame || this.frames["tb"]
+
         let dirFrame = this.frames[this.direction]
-        if(dirFrame) {
-            this.currentFrame = dirFrame
-        }
         let {x: xOffset, y: yOffset} = this.currentFrame
         this.div.style.backgroundPosition = `${xOffset}px ${yOffset}px `
+    }
     }
 }
 
@@ -177,7 +217,7 @@ class SnakeTail extends Component {
                     this.y = prevChild.y
                 }
             }
-        }
+        
         // update the div inside DOM
         this.div.style.top = `${this.y}px`
         this.div.style.left = `${this.x}px`
@@ -189,6 +229,7 @@ class SnakeTail extends Component {
         }
         let {x: xOffset, y: yOffset} = this.currentFrame
         this.div.style.backgroundPosition = `${xOffset}px ${yOffset}px `
+    }
     }
 }
 
@@ -209,30 +250,30 @@ class Snake extends Component {
         
 
         this.addChild(new SnakeBody(8,200,64,64,1, {
-            tr:   {x: -128, y: -64},
-            tl:   {x: -128, y: -64},
+            tr:   {x: 0, y: -64},
+            tl:   {x: -128, y: -128},
             br:   {x: 0, y: 0},
-            bl:   {x: -128, y: -64},
-            tb:   {x: 0, y: 0},
-            lr:   {x: -128, y: -64},
+            bl:   {x: -128, y: 0},
+            tb:   {x: -128, y: -64},
+            lr:   {x: -64, y: 0},
         }, window["map"]));
 
         this.addChild(new SnakeBody(8,264,64,64,1, {
-            tr:   {x: -128, y: -64},
-            tl:   {x: -128, y: -64},
+            tr:   {x: 0, y: -64},
+            tl:   {x: -128, y: -128},
             br:   {x: 0, y: 0},
-            bl:   {x: -128, y: -64},
-            tb:   {x: 0, y: 0},
-            lr:   {x: -128, y: -64},
+            bl:   {x: -128, y: 0},
+            tb:   {x: -128, y: -64},
+            lr:   {x: -64, y: 0},
         }, window["map"]));
 
         this.addChild(new SnakeBody(8,328,64,64,1, {
-            tr:   {x: -128, y: -64},
-            tl:   {x: -128, y: -64},
+            tr:   {x: 0, y: -64},
+            tl:   {x: -128, y: -128},
             br:   {x: 0, y: 0},
-            bl:   {x: -128, y: -64},
-            tb:   {x: 0, y: 0},
-            lr:   {x: -128, y: -64},
+            bl:   {x: -128, y: 0},
+            tb:   {x: -128, y: -64},
+            lr:   {x: -64, y: 0},
         }, window["map"]));
 
         let st = (new SnakeTail(8,392,64,64,1,{ 
@@ -247,10 +288,12 @@ class Snake extends Component {
     }
 
     update(e) {
-/*         for(let i = this.children.length - 1; i >= 0; i--) {
-            this.children[i].update(e)
-        } */
-        this.children.reverse().forEach( element => element.update(e, this.children))
+        for(let i = this.children.length - 1; i >= 0; i--) {
+            this.children[i].update(e, this.children[i-1], this.children[i + 1]) 
+        }
+        /* this.children.slice().reverse().forEach( (element, index) => { 
+            this.children[index].update(e, this.children[index - 1 ], this.children[index + 1] )
+            }) */
     }
 
     render() {
