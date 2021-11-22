@@ -1,0 +1,75 @@
+.bgcolor-5 {
+  background-color: #1e292f;
+}
+
+.carousel {
+  border: 1px dotted green;
+  height: 500px;
+  width: 500px;
+  position: relative;
+}
+
+.carousel .slice {
+  width: 50px;
+  height: 400px;
+  /* background-color: rgba(0, 128, 0, 0.616); */
+  border: 1px solid yellow;
+  position: absolute;
+  left: calc(45% - 45px);
+  top: 50px;
+  -webkit-transform-origin: center center -100px;
+          transform-origin: center center -100px;
+  -webkit-transform: rotateY(45deg);
+          transform: rotateY(45deg);
+}
+
+.carousel .slice:nth-child(1) {
+  -webkit-transform-origin: center center -100px;
+          transform-origin: center center -100px;
+}
+
+.carousel .slice:nth-child(2) {
+  -webkit-transform-origin: center center -90px;
+          transform-origin: center center -90px;
+}
+
+.carousel .slice:nth-child(3) {
+  -webkit-transform-origin: center center -80px;
+          transform-origin: center center -80px;
+}
+
+.carousel .slice:nth-child(4) {
+  -webkit-transform-origin: center center -70px;
+          transform-origin: center center -70px;
+}
+
+.carousel .slice:nth-child(5) {
+  -webkit-transform-origin: center center -60px;
+          transform-origin: center center -60px;
+}
+
+.carousel .slice:nth-child(6) {
+  -webkit-transform-origin: center center -50px;
+          transform-origin: center center -50px;
+}
+
+.carousel .slice:nth-child(7) {
+  -webkit-transform-origin: center center -40px;
+          transform-origin: center center -40px;
+}
+
+.carousel .slice:nth-child(8) {
+  -webkit-transform-origin: center center -30px;
+          transform-origin: center center -30px;
+}
+
+.carousel .slice:nth-child(9) {
+  -webkit-transform-origin: center center -20px;
+          transform-origin: center center -20px;
+}
+
+.carousel .slice:nth-child(20) {
+  -webkit-transform-origin: center center -10px;
+          transform-origin: center center -10px;
+}
+/*# sourceMappingURL=style.css.map */

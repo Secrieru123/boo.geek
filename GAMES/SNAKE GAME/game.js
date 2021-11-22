@@ -288,12 +288,12 @@ class Snake extends Component {
     }
 
     update(e) {
-        for(let i = this.children.length - 1; i >= 0; i--) {
+        /* for(let i = this.children.length - 1; i >= 0; i--) {
             this.children[i].update(e, this.children[i-1], this.children[i + 1]) 
-        }
-        /* this.children.slice().reverse().forEach( (element, index) => { 
-            this.children[index].update(e, this.children[index - 1 ], this.children[index + 1] )
-            }) */
+        } */
+        this.children.slice().reverse().forEach( (element, index1, index2) => { 
+            this.children[index].update(e, this.children[index - 1 ]).this.children[index].update(e, this.children[index + 1]) 
+            })
     }
 
     render() {

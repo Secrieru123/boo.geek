@@ -1,0 +1,39 @@
+<!-- 
+    Array (map,forEach, filter, push)
+    external library <---------- CDN (content delivery networks )
+    callback -->
+
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js" integrity="sha512-/seDHxVfh1NvFUscAj8GsHQVZJvr2jjAoYsNL7As2FCaFHUHYIarl3sRCvVlFgyouVNiRgHIebyLKjpgd1SLDw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script>
+    let names = []
+    // 1. Fill the array with random names
+    //HW1: substitute while() -> Array.prototype.fill()
+    while(names.length < 10) {
+        names.push(faker.name.findName())
+    }
+
+
+    // 2. leave only "A...." names
+    /* 
+       [0, 1, 2] - index
+       [1, 2, 3] - values
+       f()
+    */
+    let filteredNames = names.filter( n => n.startsWith("A"))// HW.2 substitute .starsWidth("A")  -> .indexOf()
+
+    // 3. wrapping with <li>
+    let wrappedNames = filteredNames.map( n => `<li>${n}</li>`)
+
+    // 4.  printing
+    wrappedNames.forEach( n => document.write(n))
+
+</script>
+
+
+//Rewrite al the code and do homework 1 and 2 
+
+

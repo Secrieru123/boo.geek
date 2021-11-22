@@ -1,0 +1,27 @@
+<script>
+    // APP: TAX CALCULATOR
+    // APP based on Functional Programming
+
+
+
+    function getRandomAmount() {
+    return Math.random() * 1000
+}
+
+
+// Pure function is a function which given the same input, will always return the same output, produces no side effects.
+function calculateVAT( cbi, cbo ) {     // cb = callback
+    /* let amount = prompt("Enter the amount of money") */
+    let amount = /* getRandomAmount() */ cbi ("Enter amount of money")
+    let tax = amount * .2
+    cbo("You have to pay: " + tax)
+}
+
+const printInDocument = (value) => document.write(value)  
+
+
+calculateVAT( prompt, printInDocument)
+
+
+
+</script>

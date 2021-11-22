@@ -1,0 +1,17 @@
+<script>
+
+// setTimeout( f, interval_ms )
+// setInterval( f, interval_ms )
+
+const showInConsole = function ( v) {
+    console.log("Here", v)
+}
+
+/* showInConsole()  // direct invocation */
+
+for (let i = 0; i < 5; i++) {
+    setInterval( function(){showInConsole(i)}, 3000 )
+}
+/* setInterval( showInConsole, 2000 ) */
+
+</script>

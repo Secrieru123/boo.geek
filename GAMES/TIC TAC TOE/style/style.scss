@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+}
+
+.container {
+  width: 210px;
+  margin: 5rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 3rem;
+}
