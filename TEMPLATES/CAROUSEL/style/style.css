@@ -1,0 +1,120 @@
+.bgcolor-5 {
+  background-color: #1e292f;
+}
+
+.carousel {
+  border: 1px dotted green;
+  width: 500px;
+  height: 700px;
+  position: relative;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+}
+
+.carousel .slice {
+  width: 50px;
+  height: 500px;
+  /* background-color: rgba(0, 128, 0, 0.616); */
+  border: 1px solid #0008;
+  position: absolute;
+  left: calc(50% - 26px);
+  top: 100px;
+  -webkit-transform-origin: center center -300px;
+          transform-origin: center center -300px;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+  background-size: cover, 50px 50px, 50px 50px, auto 400px;
+  background-repeat: repeat-x, repeat-x, no-repeat;
+  background-position: -50px center, top, bottom, -50px center;
+}
+
+.carousel .slice:nth-child(10) {
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+  background-position: -50px center, top, bottom, -500px, center;
+  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-blend-mode: color-burn;
+}
+
+.carousel .slice:nth-child(9) {
+  -webkit-transform: rotateY(-80deg);
+          transform: rotateY(-80deg);
+  background-position: -50px center, top, bottom, -450px, center;
+  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-blend-mode: color-burn;
+}
+
+.carousel .slice:nth-child(8) {
+  -webkit-transform: rotateY(-70deg);
+          transform: rotateY(-70deg);
+  background-position: -50px center, top, bottom, -400px, center;
+  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-blend-mode: color-burn;
+}
+
+.carousel .slice:nth-child(7) {
+  -webkit-transform: rotateY(-60deg);
+          transform: rotateY(-60deg);
+  background-position: -50px center, top, bottom, -350px, center;
+  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-blend-mode: color-burn;
+}
+
+.carousel .slice:nth-child(6) {
+  -webkit-transform: rotateY(-50deg);
+          transform: rotateY(-50deg);
+  background-position: -50px center, top, bottom, -300px, center;
+  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-blend-mode: color-burn;
+}
+
+.carousel .slice:nth-child(5) {
+  -webkit-transform: rotateY(-40deg);
+          transform: rotateY(-40deg);
+  background-position: -50px center, top, bottom, -250px, center;
+  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-blend-mode: color-burn;
+}
+
+.carousel .slice:nth-child(4) {
+  -webkit-transform: rotateY(-30deg);
+          transform: rotateY(-30deg);
+  background-position: -50px center, top, bottom, -200px, center;
+  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-blend-mode: color-burn;
+}
+
+.carousel .slice:nth-child(3) {
+  -webkit-transform: rotateY(-20deg);
+          transform: rotateY(-20deg);
+  background-position: -50px center, top, bottom, -150px, center;
+  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-blend-mode: color-burn;
+}
+
+.carousel .slice:nth-child(2) {
+  -webkit-transform: rotateY(-10deg);
+          transform: rotateY(-10deg);
+  background-position: -50px center, top, bottom, -100px, center;
+  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-blend-mode: color-burn;
+}
+
+.carousel .slice:nth-child(1) {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  background-position: -50px center, top, bottom, -50px, center;
+  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
+  background-blend-mode: color-burn;
+}
+/*# sourceMappingURL=style.css.map */
