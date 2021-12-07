@@ -9,49 +9,52 @@ class Component {
         this.cb = cb
         
         
-        
+        this.children=[]
         this.render()
         
     }
     render() {
         let moveRight = this.frames.right.x
-        let moveLeft = this.frames.left.y
-        this.root.innerHTML = `<div id='slice' class='test_slice'style='background-position: ${moveRight}px ${moveLeft}'></div>`
+        
+        this.root.innerHTML = `<div 
+        id='slice' 
+        class='test_slice'
+        style='background-position: ${moveRight}px'></div>`  
+        this.children.forEach(child => moveRight += child.render())
+      
     };
+    
     
 }
 
 class Carousel extends Component {
-   
+   constructor(){
+        super(0,0,0,0,{right: {x: 0, y: 0}},root,cb)
+   }
     
 }
-
-
 
 class SlideContainer extends Carousel {
+    render(){}
+    
+        
     
 }
-
 class Slide extends Carousel {
     
 }
-
-
 class ButtonContainer extends Component {
-
-}
-
-class Button extends Component {
     constructor(cb) {
-
     }
 }
-
+class Button extends Component {
+    
+}
 
 
 let slice = new Component(0,0, 50, 500,{
-    right: {x: 500, y: -50},
-    left: {x: 50, y: 500},
+    right: {x: 0, y: 0},
+    left: {x: 0, y: 0},
    
 
 }, window['test'])

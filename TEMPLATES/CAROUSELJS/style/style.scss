@@ -1,75 +1,18 @@
-/* @import "variable.scss"; */
-
 body {
   background-color: #1e292f;
 }
 
 .test {
+  position: relative;
+  top: 50px;
+  left: 100px;
+
   &_slice {
     width: 50px;
     height: 500px;
     border: 1px solid yellowgreen;
 
     background-image: url("../images/pixel.jpg");
+    background-size: cover;
   }
 }
-
-/* .carousel {
-
-  width: 500px;
-  height: 700px;
-  position: relative;
-  perspective: 500px;
-  &__slice {
-    width: 50px;
-    height: 500px;
- 
-    position: absolute;
-    left: calc(50% - 26px);
-    top: 100px;
-
-    transform-origin: center center -260px;
-    transform: rotateY(90deg);
-
-    background-size: auto 400px, 50px 50px, 50px 50px, auto 400px;
-    background-repeat: repeat-x, repeat-x, no-repeat;
-
-    $lastGColor: #000;
-    @for $i from 1 through 10 {
-      &:nth-child(#{$i}) {
-        transform: rotateY($i * 10deg - 50deg);
-        @include b-position($i * 50px);
-
-        @keyframes slide-#{$i} {
-          from {
-            @include b-position(-50px * $i);
-          }
-          to {
-            @include b-position(-50px * $i - 550px);
-          }
-        }
-
-        animation: slide-#{$i} 5s infinite;
-        @if $i <= 5 {
-          @include b-image(
-            lighten($lastGColor, $i * 3%),
-            $lastGColor,
-            lighten($lastGColor, $i * 3%)
-          );
-
-          $lastGColor: lighten($lastGColor, $i * 3%);
-        } @else if $i > 5 {
-          @include b-image(
-            darken($lastGColor, $i * 2%),
-            $lastGColor,
-            darken($lastGColor, $i * 2%)
-          );
-
-          $lastGColor: darken($lastGColor, ($i - 5) * 3%);
-        }
-
-        background-blend-mode: overlay;
-      }
-    }
-  }
-} */

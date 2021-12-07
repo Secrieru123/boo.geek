@@ -1,0 +1,18 @@
+body {
+  background-color: #1e292f;
+}
+
+.test {
+  position: relative;
+  top: 50px;
+  left: 100px;
+}
+
+.test_slice {
+  width: 50px;
+  height: 500px;
+  border: 1px solid yellowgreen;
+  background-image: url("../images/pixel.jpg");
+  background-size: cover;
+}
+/*# sourceMappingURL=style.css.map */
