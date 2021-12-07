@@ -11,18 +11,13 @@ class Element {
 
     appendChild(child){
         if (child instanceof Element && !this.children.includes(child)) {
-            this.children.forEach((childName) =>{
-                if(Object.is(child,childName)) {
-                    this.children.push()
-                }
-            })
-        }
-        
+                    this.children.push(child)
+                }        
     }
     removeChild(child) {
         if(child instanceof Element) {
-            for(const element of this.children) {
-                if(Object.is(element, child)) {
+            for(let index=0; index<=this.children.length; index++) {
+                if(Object.is(this.children.indexOf(child), index)) {
                     this.children = this.children.filter(elem => elem != child)
                 }
             }
@@ -44,4 +39,11 @@ class Element {
 
   console.log(root.render())
 
-  console.log(removeChild())
+  let parent = new Element("div")
+  let h1 = new Element("h1")
+  parent.appendChild(h1)
+  parent.appendChild(new Element("p"))
+  parent.removeChild(h1)
+  parent.removeChild(new Element("p"))
+  
+  console.log(parent.render())
