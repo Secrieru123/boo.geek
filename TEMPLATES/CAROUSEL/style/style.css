@@ -3,7 +3,6 @@
 }
 
 .carousel {
-  border: 1px dotted green;
   width: 500px;
   height: 700px;
   position: relative;
@@ -11,110 +10,541 @@
           perspective: 500px;
 }
 
-.carousel .slice {
+.carousel__slice {
   width: 50px;
   height: 500px;
-  /* background-color: rgba(0, 128, 0, 0.616); */
-  border: 1px solid #0008;
   position: absolute;
   left: calc(50% - 26px);
   top: 100px;
-  -webkit-transform-origin: center center -300px;
-          transform-origin: center center -300px;
+  -webkit-transform-origin: center center -260px;
+          transform-origin: center center -260px;
   -webkit-transform: rotateY(90deg);
           transform: rotateY(90deg);
-  background-size: cover, 50px 50px, 50px 50px, auto 400px;
+  background-size: auto 400px, 50px 50px, 50px 50px, auto 400px;
   background-repeat: repeat-x, repeat-x, no-repeat;
-  background-position: -50px center, top, bottom, -50px center;
 }
 
-.carousel .slice:nth-child(10) {
-  -webkit-transform: rotateY(-90deg);
-          transform: rotateY(-90deg);
-  background-position: -50px center, top, bottom, -500px, center;
-  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-blend-mode: color-burn;
-}
-
-.carousel .slice:nth-child(9) {
-  -webkit-transform: rotateY(-80deg);
-          transform: rotateY(-80deg);
-  background-position: -50px center, top, bottom, -450px, center;
-  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-blend-mode: color-burn;
-}
-
-.carousel .slice:nth-child(8) {
-  -webkit-transform: rotateY(-70deg);
-          transform: rotateY(-70deg);
-  background-position: -50px center, top, bottom, -400px, center;
-  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-blend-mode: color-burn;
-}
-
-.carousel .slice:nth-child(7) {
-  -webkit-transform: rotateY(-60deg);
-          transform: rotateY(-60deg);
-  background-position: -50px center, top, bottom, -350px, center;
-  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-blend-mode: color-burn;
-}
-
-.carousel .slice:nth-child(6) {
-  -webkit-transform: rotateY(-50deg);
-          transform: rotateY(-50deg);
-  background-position: -50px center, top, bottom, -300px, center;
-  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-blend-mode: color-burn;
-}
-
-.carousel .slice:nth-child(5) {
+.carousel__slice:nth-child(1) {
   -webkit-transform: rotateY(-40deg);
           transform: rotateY(-40deg);
-  background-position: -50px center, top, bottom, -250px, center;
-  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-blend-mode: color-burn;
+  background-position: -50px center, top, bottom, 50px, center;
+  -webkit-animation: slide-1 5s infinite;
+          animation: slide-1 5s infinite;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #080808), to(#000)), radial-gradient(transparent 40%, #080808 42%), radial-gradient(transparent 40%, #080808 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, #080808 50%, #000 100%), radial-gradient(transparent 40%, #080808 42%), radial-gradient(transparent 40%, #080808 42%), url("../images/pixel.jpg");
+  background-blend-mode: overlay;
 }
 
-.carousel .slice:nth-child(4) {
+@-webkit-keyframes slide-1 {
+  from {
+    background-position: -50px center, top, bottom, -50px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -600px, center;
+  }
+}
+
+@keyframes slide-1 {
+  from {
+    background-position: -50px center, top, bottom, -50px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -600px, center;
+  }
+}
+
+.carousel__slice:nth-child(2) {
   -webkit-transform: rotateY(-30deg);
           transform: rotateY(-30deg);
-  background-position: -50px center, top, bottom, -200px, center;
-  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-blend-mode: color-burn;
+  background-position: -50px center, top, bottom, 100px, center;
+  -webkit-animation: slide-2 5s infinite;
+          animation: slide-2 5s infinite;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #171717), to(#080808)), radial-gradient(transparent 40%, #171717 42%), radial-gradient(transparent 40%, #171717 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, #171717 50%, #080808 100%), radial-gradient(transparent 40%, #171717 42%), radial-gradient(transparent 40%, #171717 42%), url("../images/pixel.jpg");
+  background-blend-mode: overlay;
 }
 
-.carousel .slice:nth-child(3) {
+@-webkit-keyframes slide-2 {
+  from {
+    background-position: -50px center, top, bottom, -100px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -650px, center;
+  }
+}
+
+@keyframes slide-2 {
+  from {
+    background-position: -50px center, top, bottom, -100px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -650px, center;
+  }
+}
+
+.carousel__slice:nth-child(3) {
   -webkit-transform: rotateY(-20deg);
           transform: rotateY(-20deg);
-  background-position: -50px center, top, bottom, -150px, center;
-  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-blend-mode: color-burn;
+  background-position: -50px center, top, bottom, 150px, center;
+  -webkit-animation: slide-3 5s infinite;
+          animation: slide-3 5s infinite;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #2e2e2e), to(#171717)), radial-gradient(transparent 40%, #2e2e2e 42%), radial-gradient(transparent 40%, #2e2e2e 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, #2e2e2e 50%, #171717 100%), radial-gradient(transparent 40%, #2e2e2e 42%), radial-gradient(transparent 40%, #2e2e2e 42%), url("../images/pixel.jpg");
+  background-blend-mode: overlay;
 }
 
-.carousel .slice:nth-child(2) {
+@-webkit-keyframes slide-3 {
+  from {
+    background-position: -50px center, top, bottom, -150px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -700px, center;
+  }
+}
+
+@keyframes slide-3 {
+  from {
+    background-position: -50px center, top, bottom, -150px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -700px, center;
+  }
+}
+
+.carousel__slice:nth-child(4) {
   -webkit-transform: rotateY(-10deg);
           transform: rotateY(-10deg);
-  background-position: -50px center, top, bottom, -100px, center;
-  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-blend-mode: color-burn;
+  background-position: -50px center, top, bottom, 200px, center;
+  -webkit-animation: slide-4 5s infinite;
+          animation: slide-4 5s infinite;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #4d4d4d), to(#2e2e2e)), radial-gradient(transparent 40%, #4d4d4d 42%), radial-gradient(transparent 40%, #4d4d4d 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, #4d4d4d 50%, #2e2e2e 100%), radial-gradient(transparent 40%, #4d4d4d 42%), radial-gradient(transparent 40%, #4d4d4d 42%), url("../images/pixel.jpg");
+  background-blend-mode: overlay;
 }
 
-.carousel .slice:nth-child(1) {
+@-webkit-keyframes slide-4 {
+  from {
+    background-position: -50px center, top, bottom, -200px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -750px, center;
+  }
+}
+
+@keyframes slide-4 {
+  from {
+    background-position: -50px center, top, bottom, -200px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -750px, center;
+  }
+}
+
+.carousel__slice:nth-child(5) {
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
-  background-position: -50px center, top, bottom, -50px, center;
-  background-image: -webkit-gradient(linear, left top, right top, from(black), to(white)), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-image: linear-gradient(90deg, black, white), radial-gradient(transparent 40%, #0008 42%), radial-gradient(transparent 40%, #0008 42%), url("../images/pixel.jpg");
-  background-blend-mode: color-burn;
+  background-position: -50px center, top, bottom, 250px, center;
+  -webkit-animation: slide-5 5s infinite;
+          animation: slide-5 5s infinite;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #737373), to(#4d4d4d)), radial-gradient(transparent 40%, #737373 42%), radial-gradient(transparent 40%, #737373 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, #737373 50%, #4d4d4d 100%), radial-gradient(transparent 40%, #737373 42%), radial-gradient(transparent 40%, #737373 42%), url("../images/pixel.jpg");
+  background-blend-mode: overlay;
+}
+
+@-webkit-keyframes slide-5 {
+  from {
+    background-position: -50px center, top, bottom, -250px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -800px, center;
+  }
+}
+
+@keyframes slide-5 {
+  from {
+    background-position: -50px center, top, bottom, -250px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -800px, center;
+  }
+}
+
+.carousel__slice:nth-child(6) {
+  -webkit-transform: rotateY(10deg);
+          transform: rotateY(10deg);
+  background-position: -50px center, top, bottom, 300px, center;
+  -webkit-animation: slide-6 5s infinite;
+          animation: slide-6 5s infinite;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #545454), to(#737373)), radial-gradient(transparent 40%, #545454 42%), radial-gradient(transparent 40%, #545454 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, #545454 50%, #737373 100%), radial-gradient(transparent 40%, #545454 42%), radial-gradient(transparent 40%, #545454 42%), url("../images/pixel.jpg");
+  background-blend-mode: overlay;
+}
+
+@-webkit-keyframes slide-6 {
+  from {
+    background-position: -50px center, top, bottom, -300px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -850px, center;
+  }
+}
+
+@keyframes slide-6 {
+  from {
+    background-position: -50px center, top, bottom, -300px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -850px, center;
+  }
+}
+
+.carousel__slice:nth-child(7) {
+  -webkit-transform: rotateY(20deg);
+          transform: rotateY(20deg);
+  background-position: -50px center, top, bottom, 350px, center;
+  -webkit-animation: slide-7 5s infinite;
+          animation: slide-7 5s infinite;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #474747), to(#6b6b6b)), radial-gradient(transparent 40%, #474747 42%), radial-gradient(transparent 40%, #474747 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, #474747 50%, #6b6b6b 100%), radial-gradient(transparent 40%, #474747 42%), radial-gradient(transparent 40%, #474747 42%), url("../images/pixel.jpg");
+  background-blend-mode: overlay;
+}
+
+@-webkit-keyframes slide-7 {
+  from {
+    background-position: -50px center, top, bottom, -350px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -900px, center;
+  }
+}
+
+@keyframes slide-7 {
+  from {
+    background-position: -50px center, top, bottom, -350px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -900px, center;
+  }
+}
+
+.carousel__slice:nth-child(8) {
+  -webkit-transform: rotateY(30deg);
+          transform: rotateY(30deg);
+  background-position: -50px center, top, bottom, 400px, center;
+  -webkit-animation: slide-8 5s infinite;
+          animation: slide-8 5s infinite;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #333333), to(#5c5c5c)), radial-gradient(transparent 40%, #333333 42%), radial-gradient(transparent 40%, #333333 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, #333333 50%, #5c5c5c 100%), radial-gradient(transparent 40%, #333333 42%), radial-gradient(transparent 40%, #333333 42%), url("../images/pixel.jpg");
+  background-blend-mode: overlay;
+}
+
+@-webkit-keyframes slide-8 {
+  from {
+    background-position: -50px center, top, bottom, -400px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -950px, center;
+  }
+}
+
+@keyframes slide-8 {
+  from {
+    background-position: -50px center, top, bottom, -400px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -950px, center;
+  }
+}
+
+.carousel__slice:nth-child(9) {
+  -webkit-transform: rotateY(40deg);
+          transform: rotateY(40deg);
+  background-position: -50px center, top, bottom, 450px, center;
+  -webkit-animation: slide-9 5s infinite;
+          animation: slide-9 5s infinite;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #171717), to(#454545)), radial-gradient(transparent 40%, #171717 42%), radial-gradient(transparent 40%, #171717 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, #171717 50%, #454545 100%), radial-gradient(transparent 40%, #171717 42%), radial-gradient(transparent 40%, #171717 42%), url("../images/pixel.jpg");
+  background-blend-mode: overlay;
+}
+
+@-webkit-keyframes slide-9 {
+  from {
+    background-position: -50px center, top, bottom, -450px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -1000px, center;
+  }
+}
+
+@keyframes slide-9 {
+  from {
+    background-position: -50px center, top, bottom, -450px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -1000px, center;
+  }
+}
+
+.carousel__slice:nth-child(10) {
+  -webkit-transform: rotateY(50deg);
+          transform: rotateY(50deg);
+  background-position: -50px center, top, bottom, 500px, center;
+  -webkit-animation: slide-10 5s infinite;
+          animation: slide-10 5s infinite;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, black), to(#262626)), radial-gradient(transparent 40%, black 42%), radial-gradient(transparent 40%, black 42%), url("../images/pixel.jpg");
+  background-image: linear-gradient(90deg, black 50%, #262626 100%), radial-gradient(transparent 40%, black 42%), radial-gradient(transparent 40%, black 42%), url("../images/pixel.jpg");
+  background-blend-mode: overlay;
+}
+
+@-webkit-keyframes slide-10 {
+  from {
+    background-position: -50px center, top, bottom, -500px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -1050px, center;
+  }
+}
+
+@keyframes slide-10 {
+  from {
+    background-position: -50px center, top, bottom, -500px, center;
+  }
+  to {
+    background-position: -50px center, top, bottom, -1050px, center;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .carousel {
+    /* border: 1px dotted green; */
+    width: 700px;
+    height: 700px;
+    position: relative;
+    -webkit-perspective: 500px;
+            perspective: 500px;
+  }
+  .carousel__slice {
+    width: 500px;
+    height: 50px;
+    /* background-color: rgba(0, 128, 0, 0.616); */
+    /* border: 1px solid #0008; */
+    position: absolute;
+    top: calc(50% - 26px);
+    left: 100px;
+    -webkit-transform-origin: center center -280px;
+            transform-origin: center center -280px;
+    background-size: 400px, 50px 50px, 50px 50px, auto 268px;
+    background-repeat: repeat-y, repeat-y, no-repeat;
+  }
+  .carousel__slice:nth-child(1) {
+    -webkit-transform: rotateX(-40deg);
+            transform: rotateX(-40deg);
+    background-position: center, left, right, top 50px center;
+  }
+  @-webkit-keyframes slide-1 {
+    from {
+      background-position: center, left, right, 50px;
+    }
+    to {
+      background-position: center, left, right, -50px -50px center;
+    }
+  }
+  @keyframes slide-1 {
+    from {
+      background-position: center, left, right, 50px;
+    }
+    to {
+      background-position: center, left, right, -50px -50px center;
+    }
+  }
+  .carousel__slice:nth-child(2) {
+    -webkit-transform: rotateX(-30deg);
+            transform: rotateX(-30deg);
+    background-position: center, left, right, top 100px center;
+  }
+  @-webkit-keyframes slide-2 {
+    from {
+      background-position: center, left, right, 100px;
+    }
+    to {
+      background-position: center, left, right, -100px -50px center;
+    }
+  }
+  @keyframes slide-2 {
+    from {
+      background-position: center, left, right, 100px;
+    }
+    to {
+      background-position: center, left, right, -100px -50px center;
+    }
+  }
+  .carousel__slice:nth-child(3) {
+    -webkit-transform: rotateX(-20deg);
+            transform: rotateX(-20deg);
+    background-position: center, left, right, top 150px center;
+  }
+  @-webkit-keyframes slide-3 {
+    from {
+      background-position: center, left, right, 150px;
+    }
+    to {
+      background-position: center, left, right, -150px -50px center;
+    }
+  }
+  @keyframes slide-3 {
+    from {
+      background-position: center, left, right, 150px;
+    }
+    to {
+      background-position: center, left, right, -150px -50px center;
+    }
+  }
+  .carousel__slice:nth-child(4) {
+    -webkit-transform: rotateX(-10deg);
+            transform: rotateX(-10deg);
+    background-position: center, left, right, top 200px center;
+  }
+  @-webkit-keyframes slide-4 {
+    from {
+      background-position: center, left, right, 200px;
+    }
+    to {
+      background-position: center, left, right, -200px -50px center;
+    }
+  }
+  @keyframes slide-4 {
+    from {
+      background-position: center, left, right, 200px;
+    }
+    to {
+      background-position: center, left, right, -200px -50px center;
+    }
+  }
+  .carousel__slice:nth-child(5) {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    background-position: center, left, right, top 250px center;
+  }
+  @-webkit-keyframes slide-5 {
+    from {
+      background-position: center, left, right, 250px;
+    }
+    to {
+      background-position: center, left, right, -250px -50px center;
+    }
+  }
+  @keyframes slide-5 {
+    from {
+      background-position: center, left, right, 250px;
+    }
+    to {
+      background-position: center, left, right, -250px -50px center;
+    }
+  }
+  .carousel__slice:nth-child(6) {
+    -webkit-transform: rotateX(10deg);
+            transform: rotateX(10deg);
+    background-position: center, left, right, top 300px center;
+  }
+  @-webkit-keyframes slide-6 {
+    from {
+      background-position: center, left, right, 300px;
+    }
+    to {
+      background-position: center, left, right, -300px -50px center;
+    }
+  }
+  @keyframes slide-6 {
+    from {
+      background-position: center, left, right, 300px;
+    }
+    to {
+      background-position: center, left, right, -300px -50px center;
+    }
+  }
+  .carousel__slice:nth-child(7) {
+    -webkit-transform: rotateX(20deg);
+            transform: rotateX(20deg);
+    background-position: center, left, right, top 350px center;
+  }
+  @-webkit-keyframes slide-7 {
+    from {
+      background-position: center, left, right, 350px;
+    }
+    to {
+      background-position: center, left, right, -350px -50px center;
+    }
+  }
+  @keyframes slide-7 {
+    from {
+      background-position: center, left, right, 350px;
+    }
+    to {
+      background-position: center, left, right, -350px -50px center;
+    }
+  }
+  .carousel__slice:nth-child(8) {
+    -webkit-transform: rotateX(30deg);
+            transform: rotateX(30deg);
+    background-position: center, left, right, top 400px center;
+  }
+  @-webkit-keyframes slide-8 {
+    from {
+      background-position: center, left, right, 400px;
+    }
+    to {
+      background-position: center, left, right, -400px -50px center;
+    }
+  }
+  @keyframes slide-8 {
+    from {
+      background-position: center, left, right, 400px;
+    }
+    to {
+      background-position: center, left, right, -400px -50px center;
+    }
+  }
+  .carousel__slice:nth-child(9) {
+    -webkit-transform: rotateX(40deg);
+            transform: rotateX(40deg);
+    background-position: center, left, right, top 450px center;
+  }
+  @-webkit-keyframes slide-9 {
+    from {
+      background-position: center, left, right, 450px;
+    }
+    to {
+      background-position: center, left, right, -450px -50px center;
+    }
+  }
+  @keyframes slide-9 {
+    from {
+      background-position: center, left, right, 450px;
+    }
+    to {
+      background-position: center, left, right, -450px -50px center;
+    }
+  }
+  .carousel__slice:nth-child(10) {
+    -webkit-transform: rotateX(50deg);
+            transform: rotateX(50deg);
+    background-position: center, left, right, top 500px center;
+  }
+  @-webkit-keyframes slide-10 {
+    from {
+      background-position: center, left, right, 500px;
+    }
+    to {
+      background-position: center, left, right, -500px -50px center;
+    }
+  }
+  @keyframes slide-10 {
+    from {
+      background-position: center, left, right, 500px;
+    }
+    to {
+      background-position: center, left, right, -500px -50px center;
+    }
+  }
 }
 /*# sourceMappingURL=style.css.map */
