@@ -13,7 +13,7 @@ class Element {
         if (child instanceof Element && !this.children.includes(child)) {
             this.children.forEach((childName) =>{
                 if(Object.is(child,childName)) {
-                    this.children.splice()
+                    this.children.push()
                 }
             })
         }
