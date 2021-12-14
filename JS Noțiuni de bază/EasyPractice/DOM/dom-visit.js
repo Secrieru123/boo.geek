@@ -1,7 +1,7 @@
 
 const visit = (element) => {
 
-    //HW1. props element selected the first child and represents the text content of the node, removes whitespace from both ends of a string and return a new string. 
+    //HW1. props element get the first child element in array and represents the text content of the node, removes whitespace from both ends of a string and return a new string. 
     console.log(`
     visiting ${element.childNodes[0].textContent.trim()}
     `)
