@@ -5,7 +5,8 @@ const visit = (element) => {
     console.log(`
     visiting ${element.childNodes[0].textContent.trim()}
     `)
-
+    
+    //HW2. refactor the code using forEach()
     /* for (let index=0; index<element.children.length; index++) {
         visit(element.children[index])
     } */
