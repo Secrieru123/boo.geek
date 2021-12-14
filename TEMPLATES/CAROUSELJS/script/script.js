@@ -6,21 +6,39 @@ class Component {
         this.h = h
         this.frames = frames
         this.root = root
-        this.cb = cb
+
         
         
         this.children=[]
         this.render()
         
     }
+
+
+    init() {
+
+    }
+
+    addChild(child) {
+        if(child instanceof Component && !this.children.includes(child)) {
+            this.children.push(child);
+        }
+    }
+
+    update(){
+
+    }
+
     render() {
-        let moveRight = this.frames.right.x
+         
+            let moveRight = this.frames.right.x
         
         this.root.innerHTML = `<div 
         id='slice' 
         class='test_slice'
         style='background-position: ${moveRight}px'></div>`  
-        this.children.forEach(child => moveRight += child.render())
+        
+    
       
     };
     
@@ -28,14 +46,28 @@ class Component {
 }
 
 class Carousel extends Component {
-   constructor(){
-        super(0,0,0,0,{right: {x: 0, y: 0}},root,cb)
-   }
-    
+   
+    start() {
+
+    }
+
+    stop() {
+
+    }
 }
 
 class SlideContainer extends Carousel {
-    render(){}
+    constructor(){
+        super(0, 0, 0, 0,{x: 0, y: 0},root)
+        let addSlide
+       
+
+        for(let i = 0; i < 10; i++) {
+            addSlide += this.addChild(new Slide(0, 0, 0, 0, root))
+            
+            document.getElementsById('test_slice')[i]
+        }
+   }
     
         
     
@@ -51,14 +83,8 @@ class Button extends Component {
     
 }
 
+let slice = new SlideContainer(window['test'])
 
-let slice = new Component(0,0, 50, 500,{
-    right: {x: 0, y: 0},
-    left: {x: 0, y: 0},
-   
-
-}, window['test'])
-console.log(slice)
 
 
 /* object tree

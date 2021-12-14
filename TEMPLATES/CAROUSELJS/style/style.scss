@@ -1,3 +1,5 @@
+@import "variable.scss";
+
 body {
   background-color: #1e292f;
 }
@@ -14,5 +16,42 @@ body {
 
     background-image: url("../images/pixel.jpg");
     background-size: cover;
+
+    transform-origin: center center -260px;
+    transform: rotateY(90deg);
+
+    background-size: auto 400px, 50px 50px, 50px 50px, auto 400px;
+    background-repeat: repeat-x, repeat-x, no-repeat;
+
+    $lastGColor: #000;
+        transform: rotateY($i * 10deg - 50deg);
+        @include b-position($i * 50px);
+
+        @keyframes slide-#{$i} {
+          from {
+            @include b-position(-50px * $i);
+          }
+          to {
+            @include b-position(-50px * $i - 550px);
+          }
+        }
+
+        animation: slide-#{$i} 5s infinite;
+        @if $i <= 5 {
+          @include b-image(
+            lighten($lastGColor, $i * 3%),
+            $lastGColor,
+            lighten($lastGColor, $i * 3%)
+          );
+
+          $lastGColor: lighten($lastGColor, $i * 3%);
+        } @else if $i > 5 {
+          @include b-image(
+            darken($lastGColor, $i * 2%),
+            $lastGColor,
+            darken($lastGColor, $i * 2%)
+          );
+
+          $lastGColor: darken($lastGColor, ($i - 5) * 3%);
   }
 }

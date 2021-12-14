@@ -1,7 +1,12 @@
 const game = document.getElementById('game')
 const btnReset = document.getElementById('reset')
 
-genTable();
+let gamer = "X", move=0;
+let table = [[null,null,null],[null,null,null],[null,null,null]]
+
+let
+
+
 const genTable = () => {
     let l, c 
     for (let i=0; i<9; i++) {
@@ -13,3 +18,5 @@ const genTable = () => {
         jc.appendChild(e);
     }
 }
+
+genTable();

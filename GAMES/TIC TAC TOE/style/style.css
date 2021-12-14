@@ -20,4 +20,17 @@ h1 {
   text-align: center;
   font-size: 3rem;
 }
+
+.containerdiv {
+  color: black;
+  border-bottom: 1px solid darkgray;
+  border-right: 1px solid darkgray;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.containerdiv:hover {
+  background-color: #dfdfdf;
+}
 /*# sourceMappingURL=style.css.map */
