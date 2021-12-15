@@ -4,8 +4,8 @@
 let arr = []
 
 const findElementByTagName = (element, className) => {
-    if(element == element.className){
-        arr.push(className)
+    if(className == element.className){
+        arr.push(element)
     }
 
     let arrChild = [...element.children]

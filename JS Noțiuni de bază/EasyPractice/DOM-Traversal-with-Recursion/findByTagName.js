@@ -4,8 +4,8 @@ let arr = []
 
 const findElementByTagName = (element, tagName) => {
 
-debugger
-    if(element.tagName == tagName) {
+
+    if(tagName == element.tagName) {
         arr.push(element)
     };
 
@@ -13,7 +13,7 @@ debugger
 
     arrChild.forEach(element => 
         findElementByTagName(element, tagName) 
-        )
+        );
         return arr
 
 
