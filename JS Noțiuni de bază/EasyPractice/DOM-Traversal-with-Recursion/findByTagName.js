@@ -19,4 +19,4 @@ const findElementByTagName = (element, tagName) => {
 
 };
 
-console.log(findElementByTagName(root, "div"))
+console.log(findElementByTagName(root, "DIV"))
