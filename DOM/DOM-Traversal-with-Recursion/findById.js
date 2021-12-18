@@ -1,7 +1,6 @@
 let setId = document.getElementById('root').children[1].children[0].setAttribute('id','newDiv')
 let newId = document.getElementById('newDiv')
-const root = document.getElementById('root');
-const newDiv = 'newDiv'
+
 
 
 

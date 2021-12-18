@@ -1,3 +1,0 @@
-const bubbleEvent = (element, root) => {
-    
-}

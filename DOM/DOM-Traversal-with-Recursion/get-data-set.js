@@ -9,3 +9,17 @@ const getData = (element, key) => {
 const removeData = (element,key) => {
     delete element.dataset[key]
 }
+
+
+const bubbleEvent = (element, root) => {
+    let newElement = element.parentElement
+
+    setData(newElement, key, value)
+    if(newElement  == root){
+        return root
+    }
+    bubbleEvent(newElement, root)
+        
+    
+}
+  
