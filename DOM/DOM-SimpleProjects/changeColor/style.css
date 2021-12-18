@@ -1,0 +1,12 @@
+.wrap {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: blue;
+}
+
+button {
+  padding: 10px;
+  border-radius: 5px;
+}
