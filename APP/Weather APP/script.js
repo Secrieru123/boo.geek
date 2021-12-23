@@ -26,7 +26,7 @@ const loadData = (cb) => {
 
 const render  = (data) => {
     const city = document.getElementById('where').innerHTML = `${data.name}`
-    const wether = document.getElementById('wether').innerHTML = `${data.main.temp}`
+    const weather = document.getElementById('weather').innerHTML = `${data.main.temp}`
     const humidity = document.getElementById('humidity').innerHTML = `${data.main.humidity}`
     const winSpeed = document.getElementById('winSpeed').innerHTML = `${data.wind.speed}`
 };
