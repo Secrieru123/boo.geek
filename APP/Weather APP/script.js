@@ -1,4 +1,3 @@
-
 const btn = document.querySelector('#submit-form').addEventListener('click', submitForm)
 
 let cityName = document.forms['cityName'].elements[0]
@@ -26,9 +25,9 @@ const loadData = (cb) => {
 
 const render  = (data) => {
     const city = document.getElementById('where').innerHTML = `${data.name}`
-    const weather = document.getElementById('weather').innerHTML = `${data.main.temp}`
-    const humidity = document.getElementById('humidity').innerHTML = `${data.main.humidity}`
-    const winSpeed = document.getElementById('winSpeed').innerHTML = `${data.wind.speed}`
+    const weather = document.getElementById('weather').innerHTML = `Temperature: ${data.main.temp} &deg;C`
+    const humidity = document.getElementById('humidity').innerHTML = `Humidity: ${data.main.humidity} %`
+    const winSpeed = document.getElementById('winSpeed').innerHTML = `Wind: ${data.wind.speed} km/h`
 };
 
 function submitForm(event) {
