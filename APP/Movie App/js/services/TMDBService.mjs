@@ -15,9 +15,10 @@ class TMDBService {
 
         xhr.onload = () => {
             const data = JSON.parse(xhr.responseText)
-            options.onSuccess(data)
+            options.onSuccess(data.results.map(res => res.title))
         }
     }
+    
 }
 
 export default TMDBService 
