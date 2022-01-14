@@ -1,6 +1,6 @@
 <script>
 
-    class Person { //template
+/*     class Person { //template
 
         constructor (firstName, lastName) {
             this.firstName = firstName;
@@ -26,6 +26,24 @@
     Radu.sayName();
 
 
+ */
 
+
+
+
+ class Person {
+     constructor (firstName, lastName, dateOfBirthday) {
+         this.firstName = firstName;
+         this.lastName = lastName;
+         this.dateOfBirthday = dateOfBirthday;
+     }
+
+     calculateAge() {
+         return new Date().getFullYear() - this.dateOfBirthday.getFullYear();
+     }
+ }
+
+ let p = new Person("Ion", "Secrieru", new Date("30-09-1995"));
+ console.log(p.dateOfBirthday);
 
 </script>
