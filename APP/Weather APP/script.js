@@ -54,7 +54,6 @@ const checkDataCache = (key) => {
 }
 
 const render  = (data) => {
-    /* const city = document.getElementById('where').innerHTML = `${data.name}` */
     const weather = document.getElementById('weather').innerHTML = `Temperature: ${data.main.temp} &deg;C`
     const humidity = document.getElementById('humidity').innerHTML = `Humidity: ${data.main.humidity} %`
     const winSpeed = document.getElementById('winSpeed').innerHTML = `Wind: ${data.wind.speed} km/h`
