@@ -1,3 +1,3 @@
 const app = function () {
-    console.log("TMDB functionality")
+    console.log("Storage functionality")
 };
